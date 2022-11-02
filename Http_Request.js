@@ -67,7 +67,7 @@ Http_request.prototype.getUrl = function(node){
   
   var result = UrlFetchApp.fetch(node.getKeyNode().getObject(), options);
   
-  if (result.getResponseCode() == 200) {
+  if (result != null && result.getResponseCode() == 200) {
     params = JSON.parse(result.getContentText());
     
   }else{
@@ -102,7 +102,7 @@ Http_request.prototype.postUrl = function(node){
 
   var result = UrlFetchApp.fetch(node.getKeyNode().getObject(), options);
 
-  if (result.getResponseCode() == 200) {
+  if (result != null && result.getResponseCode() == 200) {
 
     params = JSON.parse(result.getContentText());
 
